@@ -1,0 +1,49 @@
+{
+    "manifest_version": 2,
+    "name": "Media Control",
+    "version": "1.0",
+    "permissions": ["activeTab"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "commands": {
+      "playPause": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+P"
+        },
+        "description": "Play/Pause"
+      },
+      "rewind": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+R"
+        },
+        "description": "Rewind"
+      },
+      "forward": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+F"
+        },
+        "description": "Forward"
+      },
+      "volumeUp": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+Up"
+        },
+        "description": "Volume Up"
+      },
+      "volumeDown": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+Down"
+        },
+        "description": "Volume Down"
+    }
+  }
+  }
+  
