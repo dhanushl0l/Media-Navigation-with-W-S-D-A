@@ -1,49 +1,28 @@
 {
-    "manifest_version": 2,
-    "name": "Media Control",
-    "version": "1.0",
-    "permissions": ["activeTab"],
-    "background": {
-      "scripts": ["background.js"],
-      "persistent": false
+  "manifest_version": 2,
+  "name": "Media Control Remapper",
+  "version": "1.0",
+  "description": "Remap 'd' key to control media forward",
+  "permissions": ["activeTab", "storage"],
+  "browser_action": {
+    "default_icon": {
+      "48": "icon.png"
     },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ],
-    "commands": {
-      "playPause": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+P"
-        },
-        "description": "Play/Pause"
+    "default_title": "Media Control Remapper"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "48": "icon.png"
+  },
+  "commands": {
+    "mediaForward": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D"
       },
-      "rewind": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+R"
-        },
-        "description": "Rewind"
-      },
-      "forward": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+F"
-        },
-        "description": "Forward"
-      },
-      "volumeUp": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+Up"
-        },
-        "description": "Volume Up"
-      },
-      "volumeDown": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+Down"
-        },
-        "description": "Volume Down"
+      "description": "Media Forward"
     }
   }
-  }
-  
+}
